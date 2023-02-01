@@ -1,4 +1,3 @@
-import Head from "next/Head";
 import Seo from "../components/Seo";
 
 export default function About() {
