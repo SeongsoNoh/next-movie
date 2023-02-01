@@ -55,9 +55,8 @@ export default function Home({ results }) {
   );
 }
 export async function getServerSideProps() {
-  const { results } = await (
-    await fetch(`https://next-movie-pearl.vercel.app/api/movies`)
-  ).json();
+  const BASE_URL = process.env.BASE_URL;
+  const { results } = await (await fetch(`${BASE_URL}/api/movies`)).json();
   return {
     props: {
       results: JSON.parse(JSON.stringify(results)),
